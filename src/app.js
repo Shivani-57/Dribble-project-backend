@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-    origin: 'https://main--celadon-mermaid-44f7ea.netlify.app',
+    origin: 'https://dribble-project-backend.onrender.com',
     methods:["POST","GET"],
     credentials: true,
 }));

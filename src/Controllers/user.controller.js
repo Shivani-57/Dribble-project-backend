@@ -42,7 +42,8 @@ const generateAccessAndRefreshToken = async (userId) => {
 
 const signUpUser = asyncHandler(async (req, res) => {
     
-    const { name, username, email, password } = await req.body
+    try{
+        const { name, username, email, password } = await req.body
     console.log("In signUpController", name, username, email, password)
 
 
@@ -91,6 +92,12 @@ const signUpUser = asyncHandler(async (req, res) => {
         new ApiResponse(200, createdUser, "User Registered successfully")
 
     )
+    }
+    catch (error) {
+        console.log(error)
+        // throw new ApiError(500, "Something went wrong while registering user")
+        return res.status(500).send({message:"Something went wrong while registering user of try catch"})
+    }
 })
 
 

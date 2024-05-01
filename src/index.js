@@ -16,11 +16,10 @@ connectDb()
   });
 
 // Check if the script is running in a production environment
-if (process.env.NODE_ENV !== 'production') {
-  // const PORT = PORT || 3000;
+
   app.listen(PORT || 5000, () => {
     console.log(`Updated Server is running on port: ${PORT}`);
   });
-}
+
 
 export default app;

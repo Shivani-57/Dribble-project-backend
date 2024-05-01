@@ -42,7 +42,7 @@ const generateAccessAndRefreshToken = async (userId) => {
 
 const signUpUser = asyncHandler(async (req, res) => {
     
-    const { name, username, email, password } = req.body
+    const { name, username, email, password } = await req.body
     console.log("In signUpController", name, username, email, password)
 
 
